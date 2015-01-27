@@ -21,7 +21,7 @@ public class ThreeDES {
 	 */
 	private final Logger Log = LoggerFactory.getLogger(getClass());
 
-	private static final String key = "cdeerSXEDCTGFFADN@#$%abc";
+	private static final String key = "cdeerSXED1987FADN@#$%abc";
 
 	/**
 	 * 加密
