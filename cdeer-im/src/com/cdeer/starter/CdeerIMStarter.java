@@ -3,6 +3,7 @@ package com.cdeer.starter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.cdeer.console.ConsoleService;
 import com.cdeer.manager.ConstantManager;
 import com.cdeer.redis.RedisPoolManager;
 import com.cdeer.server.AppServer;
@@ -43,6 +44,10 @@ public class CdeerIMStarter {
 		// 启动APP服务器
 		String appServerPort = configuration.getValue("appServerPort");
 		new AppServer(200).startServer(Integer.valueOf(appServerPort));
+
+		// 启动控制台服务器
+		String consolePort = configuration.getValue("consolePort");
+		new ConsoleService(10).startServer(Integer.valueOf(consolePort));
 
 	}
 

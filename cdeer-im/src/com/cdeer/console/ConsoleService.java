@@ -1,4 +1,6 @@
-package com.cdeer.server;
+package com.cdeer.console;
+
+import java.net.InetSocketAddress;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -10,25 +12,23 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.timeout.IdleStateHandler;
+import io.netty.handler.codec.LineBasedFrameDecoder;
+import io.netty.handler.codec.string.StringDecoder;
 
-import java.net.InetSocketAddress;
-
+import org.apache.log4j.PropertyConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cdeer.manager.ConstantManager;
 import com.cdeer.manager.LogTAGManager;
-import com.cdeer.server.codec.ProtobufDecoder;
-import com.cdeer.server.codec.ProtobufEncoder;
 
 /**
- * 客户端服务
+ * 控制台服务
  * 
  * @author jacklin
  * 
  */
-public class AppServer {
+public class ConsoleService {
+
 	/**
 	 * 生成日志对象
 	 */
@@ -36,7 +36,7 @@ public class AppServer {
 	private EventLoopGroup bossGroup = null;
 	private EventLoopGroup workerGroup = null;
 
-	public AppServer(int workerNum) {
+	public ConsoleService(int workerNum) {
 		bossGroup = new NioEventLoopGroup();
 		workerGroup = new NioEventLoopGroup(workerNum);
 	}
@@ -44,7 +44,7 @@ public class AppServer {
 	public void startServer(int port) {
 		// Configure the server.
 
-		Log.info(LogTAGManager.CLIENT_SERVER_INFO + "info:正在启动Netty服务器,监听端口["
+		Log.info(LogTAGManager.CONSOLE_INFO + "info:正在启动Console服务器,监听端口["
 				+ port + "]");
 		ServerBootstrap bootstrap = new ServerBootstrap();
 		bootstrap.group(bossGroup, workerGroup);
@@ -54,13 +54,14 @@ public class AppServer {
 
 			@Override
 			protected void initChannel(SocketChannel ch) throws Exception {
+				// TODO Auto-generated method stub
 				ChannelPipeline pipeline = ch.pipeline();
-				pipeline.addLast("HBeat", new IdleStateHandler(
-						ConstantManager.HEART_BEAT + 10,
-						ConstantManager.HEART_BEAT, 0));// 心跳
-				pipeline.addLast("MsgDecoder", new ProtobufDecoder());// 解码器
-				pipeline.addLast("MsgEncoder", new ProtobufEncoder());// 编码器
-				pipeline.addLast("handler", new AppServerHandler());// 消息处理器
+
+				pipeline.addLast("decoderLine",
+						new LineBasedFrameDecoder(10240));// 解码器
+				pipeline.addLast("decoderString", new StringDecoder());// 解码器
+
+				pipeline.addLast("handler", new ConsoleServiceHandler());// 消息处理器
 
 			}
 		});
@@ -75,11 +76,11 @@ public class AppServer {
 			public void operationComplete(ChannelFuture future)
 					throws Exception {
 				if (future.isSuccess()) {
-					Log.info(LogTAGManager.CLIENT_SERVER_INFO
-							+ "info:Netty服务器,启动成功");
+					Log.info(LogTAGManager.CONSOLE_INFO
+							+ "info:Console服务器,启动成功");
 				} else {
-					Log.info(LogTAGManager.CLIENT_SERVER_INFO
-							+ "info:Netty服务器,启动失败");
+					Log.info(LogTAGManager.CONSOLE_INFO
+							+ "info:Console服务器,启动失败");
 				}
 			}
 		});
@@ -87,9 +88,10 @@ public class AppServer {
 	}
 
 	/**
-	 * 停止服务器(一般用不到)
+	 * 关闭服务(基本不用)
 	 */
 	public void shoutdown() {
+
 		workerGroup.shutdownGracefully();
 		bossGroup.shutdownGracefully();
 
@@ -111,4 +113,14 @@ public class AppServer {
 		bootstrap.childOption(ChannelOption.SO_KEEPALIVE, true);
 
 	}
+
+	public static void main(String[] args) {
+
+		// 配置日志
+		PropertyConfigurator.configure("log4jtcp.properties");
+
+		ConsoleService console = new ConsoleService(10);
+		console.startServer(7777);
+	}
+
 }
