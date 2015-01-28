@@ -98,6 +98,9 @@ public class ConsoleProcessor {
 			if ("redis".equals(command)) {
 				// redis服务器信息
 				sendMsg(channel, getRedisInfo());
+			} else if ("show".equals(command)) {
+				// 控制台命令列表
+				sendMsg(channel, getCommandList());
 			} else if ("bye".equals(command)) {
 				// 关闭连接
 				sendMsg(channel, "Bye-Bye...");
