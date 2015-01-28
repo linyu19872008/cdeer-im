@@ -63,7 +63,7 @@ public class ProtobufDecoder extends ByteToMessageDecoder {
 
 			// 字节转成对象
 			Message msg = Message.parseFrom(bareByte);
-			Log.info("[CLIENT-SERVICE][RECV][remoteAddress:"
+			Log.info("[APP-SERVER][RECV][remoteAddress:"
 					+ ctx.channel().remoteAddress() + "][total length:"
 					+ length + "][bare length:" + msg.getSerializedSize()
 					+ "]:\r\n" + msg.toString());

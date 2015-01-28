@@ -41,7 +41,7 @@ public class ProtobufEncoder extends MessageToByteEncoder<Message> {
 		buf.writeBytes(encryptByte);// 消息体中包含我们要发送的数据
 		out.writeBytes(buf);
 
-		Log.info("[CLIENT-SERVICE][SEND][remoteAddress:"
+		Log.info("[APP-SERVER][SEND][remoteAddress:"
 				+ ctx.channel().remoteAddress() + "][total length:" + length
 				+ "][bare length:" + msg.getSerializedSize() + "]:\r\n"
 				+ msg.toString());

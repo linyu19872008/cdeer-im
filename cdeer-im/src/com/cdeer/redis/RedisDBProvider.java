@@ -17,6 +17,28 @@ public class RedisDBProvider {
 			.getLogger(RedisDBProvider.class);
 
 	/**
+	 * 设置用户信息
+	 * 
+	 * @param userId
+	 * @param field
+	 * @return
+	 */
+	public static void setUserInfo(long userId, String field, String value) {
+		Jedis jedis = null;
+		try {
+			jedis = RedisPoolManager.getJedis();
+			// 用户表
+			jedis.select(RedisConstantManager.REDIS_DB_USER);
+			jedis.hset("user_" + userId, field, value);
+		} catch (Exception e) {
+			Log.error(e.getMessage(), e);
+			RedisPoolManager.returnBrokenJedis(jedis);
+		} finally {
+			RedisPoolManager.returnJedis(jedis);
+		}
+	}
+
+	/**
 	 * 获取用户信息
 	 * 
 	 * @param userId

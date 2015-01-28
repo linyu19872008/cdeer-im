@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 
 import com.cdeer.manager.ConstantManager;
 import com.cdeer.manager.LogTAGManager;
+import com.cdeer.redis.RedisDBProvider;
 import com.cdeer.redis.RedisPoolManager;
 
 import redis.clients.jedis.Jedis;
@@ -46,6 +47,7 @@ public class ConsoleProcessor {
 		commandList.add("[login <password>]: Login Console");
 		commandList.add("[show]:   查看命令列表");
 		commandList.add("[redis]:  查看redis状况");
+		commandList.add("[generateUser <count>]:  生成count条用户token数据");
 		commandList.add("[bye]: Good Bye");
 
 	}
@@ -101,6 +103,16 @@ public class ConsoleProcessor {
 			} else if ("show".equals(command)) {
 				// 控制台命令列表
 				sendMsg(channel, getCommandList());
+			} else if ("generateUser".equals(command)) {
+				// 生成用户数据
+				if (msgArr.length < 2) {
+					sendMsg(channel, "缺少参数...");
+				} else {
+					int count = Integer.valueOf(msgArr[1]);
+					generateUser(count);
+					sendMsg(channel, "生成[" + count + "]条用户数据成功...");
+				}
+
 			} else if ("bye".equals(command)) {
 				// 关闭连接
 				sendMsg(channel, "Bye-Bye...");
@@ -117,6 +129,18 @@ public class ConsoleProcessor {
 			channel.close();
 		}
 
+	}
+
+	/**
+	 * 生成用户数据
+	 * 
+	 * @param count
+	 */
+	public void generateUser(int count) {
+		for (int i = 0; i < count; i++) {
+			RedisDBProvider.setUserInfo(i + 1, "user_token",
+					"abcssssssssssssssss2344");
+		}
 	}
 
 	/**

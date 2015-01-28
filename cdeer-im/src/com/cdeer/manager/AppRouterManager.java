@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.cdeer.protobuf.CdeerMsg.ErrorInfo;
+import com.cdeer.protobuf.CdeerMsg.LoginSuccess;
 import com.cdeer.protobuf.CdeerMsg.Message;
 
 /**
@@ -21,6 +22,24 @@ public class AppRouterManager {
 	 */
 	private final static Logger Log = LoggerFactory
 			.getLogger(AppRouterManager.class);
+
+	/**
+	 * 发送登录成功消息
+	 * 
+	 * @param channel
+	 */
+	public static void routeLoginSuccess(Channel channel) {
+
+		LoginSuccess.Builder loginSuccess = LoginSuccess.newBuilder();
+
+		Message.Builder msg2 = Message.newBuilder();
+		msg2.setHeader(801);
+		msg2.setLoginSuccess(loginSuccess);
+
+		Message msgSend = msg2.build();
+
+		routeDerict(channel, msgSend);
+	}
 
 	/**
 	 * 发送错误

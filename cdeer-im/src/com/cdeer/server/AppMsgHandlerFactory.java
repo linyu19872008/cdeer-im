@@ -4,6 +4,7 @@ import com.cdeer.protobuf.CdeerMsg.Message;
 import com.cdeer.server.msg.handler.AppMsgHandler;
 import com.cdeer.server.msg.handler.impl.LoginHandler;
 import com.cdeer.server.msg.handler.impl.PingHandler;
+import com.cdeer.server.msg.handler.impl.PongHandler;
 
 /**
  * 获取消息处理器
@@ -22,7 +23,10 @@ public class AppMsgHandlerFactory {
 		} else if (header == 200) {
 			// ping
 			return new PingHandler();
-		}  else {
+		} else if (header == 201) {
+			// pong
+			return new PongHandler();
+		} else {
 			return null;
 		}
 	}
