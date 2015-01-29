@@ -6,15 +6,15 @@ import com.cdeer.protobuf.CdeerMsg.Message;
 import com.cdeer.server.msg.handler.AppMsgHandler;
 
 /**
- * 心跳响应处理器
+ * 单聊管理器
  * 
  * @author jacklin
  * 
  */
-public class PongHandler implements AppMsgHandler{
+public class ChatHandler implements AppMsgHandler{
 
 	@Override
-	public void process(Channel channel, Message msg) {
+	public void process(Channel channel, Message msg2) {
 		
 	}
 

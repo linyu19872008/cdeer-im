@@ -2,6 +2,7 @@ package com.cdeer.server;
 
 import com.cdeer.protobuf.CdeerMsg.Message;
 import com.cdeer.server.msg.handler.AppMsgHandler;
+import com.cdeer.server.msg.handler.impl.ChatHandler;
 import com.cdeer.server.msg.handler.impl.LoginHandler;
 import com.cdeer.server.msg.handler.impl.PingHandler;
 import com.cdeer.server.msg.handler.impl.PongHandler;
@@ -20,6 +21,9 @@ public class AppMsgHandlerFactory {
 		if (header == 101) {
 			// 登录
 			return new LoginHandler();
+		} else if (header == 102) {
+			// 单聊
+			return new ChatHandler();
 		} else if (header == 200) {
 			// ping
 			return new PingHandler();

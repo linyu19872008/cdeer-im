@@ -15,7 +15,7 @@ import com.cdeer.server.msg.handler.AppMsgHandler;
 public class PingHandler implements AppMsgHandler {
 
 	@Override
-	public void process(Channel channel, Message msg2) {
+	public void process(Channel channel, Message msg) {
 
 		AppRouterManager.routePong(channel);
 	}

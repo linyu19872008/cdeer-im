@@ -28,10 +28,10 @@ public class LoginHandler implements AppMsgHandler {
 	private final Logger Log = LoggerFactory.getLogger(getClass());
 
 	@Override
-	public void process(Channel channel, Message msg2) {
+	public void process(Channel channel, Message msg) {
 
 		try {
-			LoginInfo loginInfo = msg2.getLoginInfo();
+			LoginInfo loginInfo = msg.getLoginInfo();
 			long userId = loginInfo.getUserId();
 			String token = loginInfo.getToken();
 			String platform = loginInfo.getPlatform().toLowerCase();
@@ -86,7 +86,7 @@ public class LoginHandler implements AppMsgHandler {
 
 		} catch (Exception e) {
 			Log.error(e.getMessage(), e);
-			Log.error(LogTAGManager.CLIENT_ERROR + "msg:" + msg2.toString());
+			Log.error(LogTAGManager.CLIENT_ERROR + "msg:" + msg.toString());
 		}
 
 	}

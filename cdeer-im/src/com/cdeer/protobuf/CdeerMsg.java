@@ -3390,6 +3390,1922 @@ public final class CdeerMsg {
     // @@protoc_insertion_point(class_scope:ErrorInfo)
   }
 
+  public interface ChatMsgOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // optional int64 msg_id = 1;
+    /**
+     * <code>optional int64 msg_id = 1;</code>
+     *
+     * <pre>
+     *消息id
+     * </pre>
+     */
+    boolean hasMsgId();
+    /**
+     * <code>optional int64 msg_id = 1;</code>
+     *
+     * <pre>
+     *消息id
+     * </pre>
+     */
+    long getMsgId();
+
+    // optional int64 from = 2;
+    /**
+     * <code>optional int64 from = 2;</code>
+     *
+     * <pre>
+     *发送方id
+     * </pre>
+     */
+    boolean hasFrom();
+    /**
+     * <code>optional int64 from = 2;</code>
+     *
+     * <pre>
+     *发送方id
+     * </pre>
+     */
+    long getFrom();
+
+    // optional int64 to = 3;
+    /**
+     * <code>optional int64 to = 3;</code>
+     *
+     * <pre>
+     *接收方id
+     * </pre>
+     */
+    boolean hasTo();
+    /**
+     * <code>optional int64 to = 3;</code>
+     *
+     * <pre>
+     *接收方id
+     * </pre>
+     */
+    long getTo();
+
+    // optional int64 time = 4;
+    /**
+     * <code>optional int64 time = 4;</code>
+     *
+     * <pre>
+     *时间戳(单位:毫秒)
+     * </pre>
+     */
+    boolean hasTime();
+    /**
+     * <code>optional int64 time = 4;</code>
+     *
+     * <pre>
+     *时间戳(单位:毫秒)
+     * </pre>
+     */
+    long getTime();
+
+    // required int32 msg_type = 5;
+    /**
+     * <code>required int32 msg_type = 5;</code>
+     *
+     * <pre>
+     *消息类型
+     * </pre>
+     */
+    boolean hasMsgType();
+    /**
+     * <code>required int32 msg_type = 5;</code>
+     *
+     * <pre>
+     *消息类型
+     * </pre>
+     */
+    int getMsgType();
+
+    // optional string content = 6;
+    /**
+     * <code>optional string content = 6;</code>
+     *
+     * <pre>
+     *消息内容
+     * </pre>
+     */
+    boolean hasContent();
+    /**
+     * <code>optional string content = 6;</code>
+     *
+     * <pre>
+     *消息内容
+     * </pre>
+     */
+    java.lang.String getContent();
+    /**
+     * <code>optional string content = 6;</code>
+     *
+     * <pre>
+     *消息内容
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getContentBytes();
+
+    // optional string url = 7;
+    /**
+     * <code>optional string url = 7;</code>
+     *
+     * <pre>
+     *多媒体地址
+     * </pre>
+     */
+    boolean hasUrl();
+    /**
+     * <code>optional string url = 7;</code>
+     *
+     * <pre>
+     *多媒体地址
+     * </pre>
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>optional string url = 7;</code>
+     *
+     * <pre>
+     *多媒体地址
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+
+    // optional string property = 8;
+    /**
+     * <code>optional string property = 8;</code>
+     *
+     * <pre>
+     *附加属性
+     * </pre>
+     */
+    boolean hasProperty();
+    /**
+     * <code>optional string property = 8;</code>
+     *
+     * <pre>
+     *附加属性
+     * </pre>
+     */
+    java.lang.String getProperty();
+    /**
+     * <code>optional string property = 8;</code>
+     *
+     * <pre>
+     *附加属性
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getPropertyBytes();
+
+    // optional string from_nick = 9;
+    /**
+     * <code>optional string from_nick = 9;</code>
+     *
+     * <pre>
+     *发送者昵称
+     * </pre>
+     */
+    boolean hasFromNick();
+    /**
+     * <code>optional string from_nick = 9;</code>
+     *
+     * <pre>
+     *发送者昵称
+     * </pre>
+     */
+    java.lang.String getFromNick();
+    /**
+     * <code>optional string from_nick = 9;</code>
+     *
+     * <pre>
+     *发送者昵称
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getFromNickBytes();
+
+    // optional string json = 10;
+    /**
+     * <code>optional string json = 10;</code>
+     *
+     * <pre>
+     *附加的json串
+     * </pre>
+     */
+    boolean hasJson();
+    /**
+     * <code>optional string json = 10;</code>
+     *
+     * <pre>
+     *附加的json串
+     * </pre>
+     */
+    java.lang.String getJson();
+    /**
+     * <code>optional string json = 10;</code>
+     *
+     * <pre>
+     *附加的json串
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getJsonBytes();
+  }
+  /**
+   * Protobuf type {@code ChatMsg}
+   *
+   * <pre>
+   *单聊消息
+   * </pre>
+   */
+  public static final class ChatMsg extends
+      com.google.protobuf.GeneratedMessage
+      implements ChatMsgOrBuilder {
+    // Use ChatMsg.newBuilder() to construct.
+    private ChatMsg(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ChatMsg(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ChatMsg defaultInstance;
+    public static ChatMsg getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ChatMsg getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChatMsg(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              msgId_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              from_ = input.readInt64();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              to_ = input.readInt64();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              time_ = input.readInt64();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              msgType_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              bitField0_ |= 0x00000020;
+              content_ = input.readBytes();
+              break;
+            }
+            case 58: {
+              bitField0_ |= 0x00000040;
+              url_ = input.readBytes();
+              break;
+            }
+            case 66: {
+              bitField0_ |= 0x00000080;
+              property_ = input.readBytes();
+              break;
+            }
+            case 74: {
+              bitField0_ |= 0x00000100;
+              fromNick_ = input.readBytes();
+              break;
+            }
+            case 82: {
+              bitField0_ |= 0x00000200;
+              json_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.cdeer.protobuf.CdeerMsg.internal_static_ChatMsg_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.cdeer.protobuf.CdeerMsg.internal_static_ChatMsg_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.cdeer.protobuf.CdeerMsg.ChatMsg.class, com.cdeer.protobuf.CdeerMsg.ChatMsg.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ChatMsg> PARSER =
+        new com.google.protobuf.AbstractParser<ChatMsg>() {
+      public ChatMsg parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChatMsg(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChatMsg> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional int64 msg_id = 1;
+    public static final int MSG_ID_FIELD_NUMBER = 1;
+    private long msgId_;
+    /**
+     * <code>optional int64 msg_id = 1;</code>
+     *
+     * <pre>
+     *消息id
+     * </pre>
+     */
+    public boolean hasMsgId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int64 msg_id = 1;</code>
+     *
+     * <pre>
+     *消息id
+     * </pre>
+     */
+    public long getMsgId() {
+      return msgId_;
+    }
+
+    // optional int64 from = 2;
+    public static final int FROM_FIELD_NUMBER = 2;
+    private long from_;
+    /**
+     * <code>optional int64 from = 2;</code>
+     *
+     * <pre>
+     *发送方id
+     * </pre>
+     */
+    public boolean hasFrom() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int64 from = 2;</code>
+     *
+     * <pre>
+     *发送方id
+     * </pre>
+     */
+    public long getFrom() {
+      return from_;
+    }
+
+    // optional int64 to = 3;
+    public static final int TO_FIELD_NUMBER = 3;
+    private long to_;
+    /**
+     * <code>optional int64 to = 3;</code>
+     *
+     * <pre>
+     *接收方id
+     * </pre>
+     */
+    public boolean hasTo() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 to = 3;</code>
+     *
+     * <pre>
+     *接收方id
+     * </pre>
+     */
+    public long getTo() {
+      return to_;
+    }
+
+    // optional int64 time = 4;
+    public static final int TIME_FIELD_NUMBER = 4;
+    private long time_;
+    /**
+     * <code>optional int64 time = 4;</code>
+     *
+     * <pre>
+     *时间戳(单位:毫秒)
+     * </pre>
+     */
+    public boolean hasTime() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int64 time = 4;</code>
+     *
+     * <pre>
+     *时间戳(单位:毫秒)
+     * </pre>
+     */
+    public long getTime() {
+      return time_;
+    }
+
+    // required int32 msg_type = 5;
+    public static final int MSG_TYPE_FIELD_NUMBER = 5;
+    private int msgType_;
+    /**
+     * <code>required int32 msg_type = 5;</code>
+     *
+     * <pre>
+     *消息类型
+     * </pre>
+     */
+    public boolean hasMsgType() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>required int32 msg_type = 5;</code>
+     *
+     * <pre>
+     *消息类型
+     * </pre>
+     */
+    public int getMsgType() {
+      return msgType_;
+    }
+
+    // optional string content = 6;
+    public static final int CONTENT_FIELD_NUMBER = 6;
+    private java.lang.Object content_;
+    /**
+     * <code>optional string content = 6;</code>
+     *
+     * <pre>
+     *消息内容
+     * </pre>
+     */
+    public boolean hasContent() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional string content = 6;</code>
+     *
+     * <pre>
+     *消息内容
+     * </pre>
+     */
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          content_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string content = 6;</code>
+     *
+     * <pre>
+     *消息内容
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string url = 7;
+    public static final int URL_FIELD_NUMBER = 7;
+    private java.lang.Object url_;
+    /**
+     * <code>optional string url = 7;</code>
+     *
+     * <pre>
+     *多媒体地址
+     * </pre>
+     */
+    public boolean hasUrl() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional string url = 7;</code>
+     *
+     * <pre>
+     *多媒体地址
+     * </pre>
+     */
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          url_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string url = 7;</code>
+     *
+     * <pre>
+     *多媒体地址
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string property = 8;
+    public static final int PROPERTY_FIELD_NUMBER = 8;
+    private java.lang.Object property_;
+    /**
+     * <code>optional string property = 8;</code>
+     *
+     * <pre>
+     *附加属性
+     * </pre>
+     */
+    public boolean hasProperty() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional string property = 8;</code>
+     *
+     * <pre>
+     *附加属性
+     * </pre>
+     */
+    public java.lang.String getProperty() {
+      java.lang.Object ref = property_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          property_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string property = 8;</code>
+     *
+     * <pre>
+     *附加属性
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getPropertyBytes() {
+      java.lang.Object ref = property_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        property_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string from_nick = 9;
+    public static final int FROM_NICK_FIELD_NUMBER = 9;
+    private java.lang.Object fromNick_;
+    /**
+     * <code>optional string from_nick = 9;</code>
+     *
+     * <pre>
+     *发送者昵称
+     * </pre>
+     */
+    public boolean hasFromNick() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional string from_nick = 9;</code>
+     *
+     * <pre>
+     *发送者昵称
+     * </pre>
+     */
+    public java.lang.String getFromNick() {
+      java.lang.Object ref = fromNick_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          fromNick_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string from_nick = 9;</code>
+     *
+     * <pre>
+     *发送者昵称
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getFromNickBytes() {
+      java.lang.Object ref = fromNick_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fromNick_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string json = 10;
+    public static final int JSON_FIELD_NUMBER = 10;
+    private java.lang.Object json_;
+    /**
+     * <code>optional string json = 10;</code>
+     *
+     * <pre>
+     *附加的json串
+     * </pre>
+     */
+    public boolean hasJson() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>optional string json = 10;</code>
+     *
+     * <pre>
+     *附加的json串
+     * </pre>
+     */
+    public java.lang.String getJson() {
+      java.lang.Object ref = json_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          json_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string json = 10;</code>
+     *
+     * <pre>
+     *附加的json串
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getJsonBytes() {
+      java.lang.Object ref = json_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        json_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      msgId_ = 0L;
+      from_ = 0L;
+      to_ = 0L;
+      time_ = 0L;
+      msgType_ = 0;
+      content_ = "";
+      url_ = "";
+      property_ = "";
+      fromNick_ = "";
+      json_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasMsgType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, msgId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt64(2, from_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, to_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt64(4, time_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt32(5, msgType_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getContentBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getUrlBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeBytes(8, getPropertyBytes());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeBytes(9, getFromNickBytes());
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeBytes(10, getJsonBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, msgId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, from_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, to_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, time_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, msgType_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getContentBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getUrlBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(8, getPropertyBytes());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(9, getFromNickBytes());
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(10, getJsonBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.cdeer.protobuf.CdeerMsg.ChatMsg parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cdeer.protobuf.CdeerMsg.ChatMsg parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cdeer.protobuf.CdeerMsg.ChatMsg parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cdeer.protobuf.CdeerMsg.ChatMsg parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cdeer.protobuf.CdeerMsg.ChatMsg parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.cdeer.protobuf.CdeerMsg.ChatMsg parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.cdeer.protobuf.CdeerMsg.ChatMsg parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.cdeer.protobuf.CdeerMsg.ChatMsg parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.cdeer.protobuf.CdeerMsg.ChatMsg parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.cdeer.protobuf.CdeerMsg.ChatMsg parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.cdeer.protobuf.CdeerMsg.ChatMsg prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ChatMsg}
+     *
+     * <pre>
+     *单聊消息
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.cdeer.protobuf.CdeerMsg.ChatMsgOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.cdeer.protobuf.CdeerMsg.internal_static_ChatMsg_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.cdeer.protobuf.CdeerMsg.internal_static_ChatMsg_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.cdeer.protobuf.CdeerMsg.ChatMsg.class, com.cdeer.protobuf.CdeerMsg.ChatMsg.Builder.class);
+      }
+
+      // Construct using com.cdeer.protobuf.CdeerMsg.ChatMsg.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        msgId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        from_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        to_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        time_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        msgType_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        content_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        url_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        property_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
+        fromNick_ = "";
+        bitField0_ = (bitField0_ & ~0x00000100);
+        json_ = "";
+        bitField0_ = (bitField0_ & ~0x00000200);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.cdeer.protobuf.CdeerMsg.internal_static_ChatMsg_descriptor;
+      }
+
+      public com.cdeer.protobuf.CdeerMsg.ChatMsg getDefaultInstanceForType() {
+        return com.cdeer.protobuf.CdeerMsg.ChatMsg.getDefaultInstance();
+      }
+
+      public com.cdeer.protobuf.CdeerMsg.ChatMsg build() {
+        com.cdeer.protobuf.CdeerMsg.ChatMsg result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.cdeer.protobuf.CdeerMsg.ChatMsg buildPartial() {
+        com.cdeer.protobuf.CdeerMsg.ChatMsg result = new com.cdeer.protobuf.CdeerMsg.ChatMsg(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.msgId_ = msgId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.from_ = from_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.to_ = to_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.time_ = time_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.msgType_ = msgType_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.content_ = content_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.url_ = url_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.property_ = property_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.fromNick_ = fromNick_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.json_ = json_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.cdeer.protobuf.CdeerMsg.ChatMsg) {
+          return mergeFrom((com.cdeer.protobuf.CdeerMsg.ChatMsg)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.cdeer.protobuf.CdeerMsg.ChatMsg other) {
+        if (other == com.cdeer.protobuf.CdeerMsg.ChatMsg.getDefaultInstance()) return this;
+        if (other.hasMsgId()) {
+          setMsgId(other.getMsgId());
+        }
+        if (other.hasFrom()) {
+          setFrom(other.getFrom());
+        }
+        if (other.hasTo()) {
+          setTo(other.getTo());
+        }
+        if (other.hasTime()) {
+          setTime(other.getTime());
+        }
+        if (other.hasMsgType()) {
+          setMsgType(other.getMsgType());
+        }
+        if (other.hasContent()) {
+          bitField0_ |= 0x00000020;
+          content_ = other.content_;
+          onChanged();
+        }
+        if (other.hasUrl()) {
+          bitField0_ |= 0x00000040;
+          url_ = other.url_;
+          onChanged();
+        }
+        if (other.hasProperty()) {
+          bitField0_ |= 0x00000080;
+          property_ = other.property_;
+          onChanged();
+        }
+        if (other.hasFromNick()) {
+          bitField0_ |= 0x00000100;
+          fromNick_ = other.fromNick_;
+          onChanged();
+        }
+        if (other.hasJson()) {
+          bitField0_ |= 0x00000200;
+          json_ = other.json_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasMsgType()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.cdeer.protobuf.CdeerMsg.ChatMsg parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.cdeer.protobuf.CdeerMsg.ChatMsg) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional int64 msg_id = 1;
+      private long msgId_ ;
+      /**
+       * <code>optional int64 msg_id = 1;</code>
+       *
+       * <pre>
+       *消息id
+       * </pre>
+       */
+      public boolean hasMsgId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int64 msg_id = 1;</code>
+       *
+       * <pre>
+       *消息id
+       * </pre>
+       */
+      public long getMsgId() {
+        return msgId_;
+      }
+      /**
+       * <code>optional int64 msg_id = 1;</code>
+       *
+       * <pre>
+       *消息id
+       * </pre>
+       */
+      public Builder setMsgId(long value) {
+        bitField0_ |= 0x00000001;
+        msgId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 msg_id = 1;</code>
+       *
+       * <pre>
+       *消息id
+       * </pre>
+       */
+      public Builder clearMsgId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        msgId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 from = 2;
+      private long from_ ;
+      /**
+       * <code>optional int64 from = 2;</code>
+       *
+       * <pre>
+       *发送方id
+       * </pre>
+       */
+      public boolean hasFrom() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int64 from = 2;</code>
+       *
+       * <pre>
+       *发送方id
+       * </pre>
+       */
+      public long getFrom() {
+        return from_;
+      }
+      /**
+       * <code>optional int64 from = 2;</code>
+       *
+       * <pre>
+       *发送方id
+       * </pre>
+       */
+      public Builder setFrom(long value) {
+        bitField0_ |= 0x00000002;
+        from_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 from = 2;</code>
+       *
+       * <pre>
+       *发送方id
+       * </pre>
+       */
+      public Builder clearFrom() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        from_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 to = 3;
+      private long to_ ;
+      /**
+       * <code>optional int64 to = 3;</code>
+       *
+       * <pre>
+       *接收方id
+       * </pre>
+       */
+      public boolean hasTo() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int64 to = 3;</code>
+       *
+       * <pre>
+       *接收方id
+       * </pre>
+       */
+      public long getTo() {
+        return to_;
+      }
+      /**
+       * <code>optional int64 to = 3;</code>
+       *
+       * <pre>
+       *接收方id
+       * </pre>
+       */
+      public Builder setTo(long value) {
+        bitField0_ |= 0x00000004;
+        to_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 to = 3;</code>
+       *
+       * <pre>
+       *接收方id
+       * </pre>
+       */
+      public Builder clearTo() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        to_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 time = 4;
+      private long time_ ;
+      /**
+       * <code>optional int64 time = 4;</code>
+       *
+       * <pre>
+       *时间戳(单位:毫秒)
+       * </pre>
+       */
+      public boolean hasTime() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int64 time = 4;</code>
+       *
+       * <pre>
+       *时间戳(单位:毫秒)
+       * </pre>
+       */
+      public long getTime() {
+        return time_;
+      }
+      /**
+       * <code>optional int64 time = 4;</code>
+       *
+       * <pre>
+       *时间戳(单位:毫秒)
+       * </pre>
+       */
+      public Builder setTime(long value) {
+        bitField0_ |= 0x00000008;
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 time = 4;</code>
+       *
+       * <pre>
+       *时间戳(单位:毫秒)
+       * </pre>
+       */
+      public Builder clearTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        time_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // required int32 msg_type = 5;
+      private int msgType_ ;
+      /**
+       * <code>required int32 msg_type = 5;</code>
+       *
+       * <pre>
+       *消息类型
+       * </pre>
+       */
+      public boolean hasMsgType() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required int32 msg_type = 5;</code>
+       *
+       * <pre>
+       *消息类型
+       * </pre>
+       */
+      public int getMsgType() {
+        return msgType_;
+      }
+      /**
+       * <code>required int32 msg_type = 5;</code>
+       *
+       * <pre>
+       *消息类型
+       * </pre>
+       */
+      public Builder setMsgType(int value) {
+        bitField0_ |= 0x00000010;
+        msgType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 msg_type = 5;</code>
+       *
+       * <pre>
+       *消息类型
+       * </pre>
+       */
+      public Builder clearMsgType() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        msgType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional string content = 6;
+      private java.lang.Object content_ = "";
+      /**
+       * <code>optional string content = 6;</code>
+       *
+       * <pre>
+       *消息内容
+       * </pre>
+       */
+      public boolean hasContent() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string content = 6;</code>
+       *
+       * <pre>
+       *消息内容
+       * </pre>
+       */
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          content_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string content = 6;</code>
+       *
+       * <pre>
+       *消息内容
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string content = 6;</code>
+       *
+       * <pre>
+       *消息内容
+       * </pre>
+       */
+      public Builder setContent(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string content = 6;</code>
+       *
+       * <pre>
+       *消息内容
+       * </pre>
+       */
+      public Builder clearContent() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string content = 6;</code>
+       *
+       * <pre>
+       *消息内容
+       * </pre>
+       */
+      public Builder setContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string url = 7;
+      private java.lang.Object url_ = "";
+      /**
+       * <code>optional string url = 7;</code>
+       *
+       * <pre>
+       *多媒体地址
+       * </pre>
+       */
+      public boolean hasUrl() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional string url = 7;</code>
+       *
+       * <pre>
+       *多媒体地址
+       * </pre>
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string url = 7;</code>
+       *
+       * <pre>
+       *多媒体地址
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string url = 7;</code>
+       *
+       * <pre>
+       *多媒体地址
+       * </pre>
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        url_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string url = 7;</code>
+       *
+       * <pre>
+       *多媒体地址
+       * </pre>
+       */
+      public Builder clearUrl() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        url_ = getDefaultInstance().getUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string url = 7;</code>
+       *
+       * <pre>
+       *多媒体地址
+       * </pre>
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        url_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string property = 8;
+      private java.lang.Object property_ = "";
+      /**
+       * <code>optional string property = 8;</code>
+       *
+       * <pre>
+       *附加属性
+       * </pre>
+       */
+      public boolean hasProperty() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional string property = 8;</code>
+       *
+       * <pre>
+       *附加属性
+       * </pre>
+       */
+      public java.lang.String getProperty() {
+        java.lang.Object ref = property_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          property_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string property = 8;</code>
+       *
+       * <pre>
+       *附加属性
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getPropertyBytes() {
+        java.lang.Object ref = property_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          property_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string property = 8;</code>
+       *
+       * <pre>
+       *附加属性
+       * </pre>
+       */
+      public Builder setProperty(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        property_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string property = 8;</code>
+       *
+       * <pre>
+       *附加属性
+       * </pre>
+       */
+      public Builder clearProperty() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        property_ = getDefaultInstance().getProperty();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string property = 8;</code>
+       *
+       * <pre>
+       *附加属性
+       * </pre>
+       */
+      public Builder setPropertyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        property_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string from_nick = 9;
+      private java.lang.Object fromNick_ = "";
+      /**
+       * <code>optional string from_nick = 9;</code>
+       *
+       * <pre>
+       *发送者昵称
+       * </pre>
+       */
+      public boolean hasFromNick() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional string from_nick = 9;</code>
+       *
+       * <pre>
+       *发送者昵称
+       * </pre>
+       */
+      public java.lang.String getFromNick() {
+        java.lang.Object ref = fromNick_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          fromNick_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string from_nick = 9;</code>
+       *
+       * <pre>
+       *发送者昵称
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getFromNickBytes() {
+        java.lang.Object ref = fromNick_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fromNick_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string from_nick = 9;</code>
+       *
+       * <pre>
+       *发送者昵称
+       * </pre>
+       */
+      public Builder setFromNick(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
+        fromNick_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string from_nick = 9;</code>
+       *
+       * <pre>
+       *发送者昵称
+       * </pre>
+       */
+      public Builder clearFromNick() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        fromNick_ = getDefaultInstance().getFromNick();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string from_nick = 9;</code>
+       *
+       * <pre>
+       *发送者昵称
+       * </pre>
+       */
+      public Builder setFromNickBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
+        fromNick_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string json = 10;
+      private java.lang.Object json_ = "";
+      /**
+       * <code>optional string json = 10;</code>
+       *
+       * <pre>
+       *附加的json串
+       * </pre>
+       */
+      public boolean hasJson() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional string json = 10;</code>
+       *
+       * <pre>
+       *附加的json串
+       * </pre>
+       */
+      public java.lang.String getJson() {
+        java.lang.Object ref = json_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          json_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string json = 10;</code>
+       *
+       * <pre>
+       *附加的json串
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getJsonBytes() {
+        java.lang.Object ref = json_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          json_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string json = 10;</code>
+       *
+       * <pre>
+       *附加的json串
+       * </pre>
+       */
+      public Builder setJson(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        json_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string json = 10;</code>
+       *
+       * <pre>
+       *附加的json串
+       * </pre>
+       */
+      public Builder clearJson() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        json_ = getDefaultInstance().getJson();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string json = 10;</code>
+       *
+       * <pre>
+       *附加的json串
+       * </pre>
+       */
+      public Builder setJsonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        json_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:ChatMsg)
+    }
+
+    static {
+      defaultInstance = new ChatMsg(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:ChatMsg)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Message_descriptor;
   private static
@@ -3410,6 +5326,11 @@ public final class CdeerMsg {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_ErrorInfo_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_ChatMsg_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_ChatMsg_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3426,8 +5347,12 @@ public final class CdeerMsg {
       "\n\007user_id\030\001 \002(\003\022\r\n\005token\030\002 \002(\t\022\020\n\010platfo" +
       "rm\030\003 \001(\t\022\023\n\013app_version\030\004 \001(\t\"\016\n\014LoginSu" +
       "ccess\"7\n\tErrorInfo\022\014\n\004code\030\001 \002(\005\022\014\n\004info" +
-      "\030\002 \002(\t\022\016\n\006expose\030\003 \002(\005B\036\n\022com.cdeer.prot" +
-      "obufB\010CdeerMsg"
+      "\030\002 \002(\t\022\016\n\006expose\030\003 \002(\005\"\244\001\n\007ChatMsg\022\016\n\006ms" +
+      "g_id\030\001 \001(\003\022\014\n\004from\030\002 \001(\003\022\n\n\002to\030\003 \001(\003\022\014\n\004" +
+      "time\030\004 \001(\003\022\020\n\010msg_type\030\005 \002(\005\022\017\n\007content\030",
+      "\006 \001(\t\022\013\n\003url\030\007 \001(\t\022\020\n\010property\030\010 \001(\t\022\021\n\t" +
+      "from_nick\030\t \001(\t\022\014\n\004json\030\n \001(\tB\036\n\022com.cde" +
+      "er.protobufB\010CdeerMsg"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -3458,6 +5383,12 @@ public final class CdeerMsg {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ErrorInfo_descriptor,
               new java.lang.String[] { "Code", "Info", "Expose", });
+          internal_static_ChatMsg_descriptor =
+            getDescriptor().getMessageTypes().get(4);
+          internal_static_ChatMsg_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_ChatMsg_descriptor,
+              new java.lang.String[] { "MsgId", "From", "To", "Time", "MsgType", "Content", "Url", "Property", "FromNick", "Json", });
           return null;
         }
       };

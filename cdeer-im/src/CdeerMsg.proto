@@ -18,7 +18,7 @@ header 包头说明:
 200--心跳请求ping;
 201--心跳响应pong;
 500--消息回执;
-102--私信;
+102--单聊;
 404--错误消息;
 502--已读消息;
 505--正在输入;
@@ -45,6 +45,19 @@ message ErrorInfo{
 	required int32 expose = 3;		    //错误描述是否提示给用户:1 提示;0 不提示
 }
 
+/*单聊消息*/
+message ChatMsg{
+	optional int64 msg_id = 1;		//消息id
+	optional int64 from = 2;		//发送方id
+	optional int64 to = 3;			//接收方id
+	optional int64 time = 4;		//时间戳(单位:毫秒)
+	required int32 msg_type = 5;	//消息类型
+	optional string content = 6;	//消息内容
+	optional string url = 7;		//多媒体地址
+	optional string property = 8;	//附加属性
+	optional string from_nick = 9;	//发送者昵称
+	optional string json = 10;		//附加的json串
+}
 
 
 
