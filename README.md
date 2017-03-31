@@ -24,5 +24,5 @@
 
 
 捐赠  
- ![支付宝](http://i.niupic.com/images/2017/03/31/4BRLWY.png)
+ ![支付宝](http://i.niupic.com/images/2017/03/31/4BRLWY.png-w150)
 
