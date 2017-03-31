@@ -17,4 +17,12 @@
 第二版环境要求：  
 1  JDK1.8及以上  
 2  Zookeeper3.4.9及以上  
-3  Redis2.8及以上
+3  Redis2.8及以上  
+
+
+
+
+
+捐赠  
+ ![支付宝](http://i.niupic.com/images/2017/03/31/4BRLWY.png)
+
